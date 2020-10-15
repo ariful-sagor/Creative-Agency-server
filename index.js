@@ -22,8 +22,7 @@ client.connect(err => {
     const servicesCollection = client.db("creative-service").collection("services");
     const orderCollection = client.db("creative-service").collection("orders");
     const reviewsCollection = client.db("creative-service").collection("reviews");
-    console.log('Connected to Database...');
-
+    
     
     // POST & GET ORDER
     app.get('/orders', (req, res) => {
@@ -52,7 +51,6 @@ client.connect(err => {
             .then(result => {
                 res.send(result.insertedCount > 0);
         })
-        console.log(service,description,image,name, email, file);
     })
 
     // POST & GET REVIEW
@@ -73,7 +71,6 @@ client.connect(err => {
             .then(result => {
                 res.send(result.insertedCount > 0)
             })
-            console.log(name,company,review)
     });
 
     // POST & GET SERVICE
@@ -102,7 +99,6 @@ client.connect(err => {
             .then(result => {
                 res.send(result.insertedCount > 0);
         })
-        console.log(service,description,image, file);
     })
 
     // POST & GET ADMIN
@@ -121,7 +117,6 @@ client.connect(err => {
             .then(result => {
                 res.send(result.insertedCount > 0)
             })
-            console.log(email)
     });
 
     // Admin Check
